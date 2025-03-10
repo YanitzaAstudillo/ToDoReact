@@ -1,0 +1,30 @@
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: white;
+    padding: 15px 20px;
+}
+
+
+
+.links {
+    list-style: none;
+    display: flex;
+}
+
+.links li {
+    margin: 0 15px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+   
+}
+
+
+

@@ -1,0 +1,38 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+  .estilo2{
+    width:100% ;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    margin-top: 0%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:large;
+    background: linear-gradient(
+      rgba(104, 17, 218, 0.814),
+      rgba(226, 12, 212, 0.814)
+    );
+  
+  }
+    #boton2{
+      color: white;
+      padding: 7px;
+      line-height: 2em;
+      border-radius: 1em;
+      border:1px solid;
+      background: linear-gradient(
+        rgba(21, 27, 20, 0.814),
+        rgba(148, 240, 235, 0.814)
+      );
+      position: relative;
+      margin-left: 15px;
+    }
+    .color{
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      position: static;
+      max-width: 240px;
+    }
