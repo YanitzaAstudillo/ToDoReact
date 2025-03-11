@@ -14,7 +14,7 @@ function FormRegister() {
   const [passwordUsuario,SetPasswordUsuario]=useState()
 
 
-}
+
 
   function nombre(evento) {
 
@@ -36,12 +36,16 @@ function FormRegister() {
 
   
   function cargar() {
+
+
     llamados.PostUsers(nombreUsuario,emailUsuario,passwordUsuario)
+      mostrarAlerta()
+
   }
 
-//Hooks para el sweetalert
+//Hook para el sweetalert
 
-const mostrarAlerta = () => {
+  const mostrarAlerta = () => {
     Swal.fire ({
       title: 'Exito!',
       text: 'Realizado',
@@ -52,20 +56,21 @@ const mostrarAlerta = () => {
 
   return (
     <div>
-
-        <label >Nombre</label>
-        <input value={nombreUsuario} onChange={nombre}  type="text" />
         <br />
-        <label >Email</label>
-        <input value={emailUsuario} onChange={email} type="text" />
+        <label >Nombre</label><br />
+        <input value={nombreUsuario} onChange={nombre}  type="text" /><br />
         <br />
-        <label >Password</label>
-        <input value={passwordUsuario} onChange={password} type="text" />
-        <button onClick={cargar} >Registrarse</button>
-
+        <label >Email</label><br />
+        <input value={emailUsuario} onChange={email} type="text" /><br />
+        <br />
+        <label >Password</label><br />
+        <input value={passwordUsuario} onChange={password} type="text" /><br />
+        <br />
+        <button onClick={cargar} >Registrarse</button><br />
+        <br />
         <p>¿Ya tienes una cuenta? <Link to="/login">Inicia Aqui</Link></p>
-
-        <button onClick={mostrarAlerta}>Mostrar alerta</button>
+        <br />
+        
 
     </div>
   )

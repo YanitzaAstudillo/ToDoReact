@@ -13,30 +13,17 @@ function Card() {
   
 
   useEffect(() => {
-   
        async function fetchDataUsers() {
-   
-     
          const datos = await llamados.GetUsers()
          console.log(datos);
-         
-         
          SetUsuarios(datos)
-         
-    
        };
-   
        fetchDataUsers();
-   
-   
      }, []); 
-
-
-  
      function eliminar(id) {
-
-      llamados.DeleteUser(id)
+      console.log(id);
       
+      llamados.DeleteUser(id)
       
      }
 
@@ -60,28 +47,27 @@ function Card() {
         SetNombre ('');
         SetEmail ('');
         SetPassword ('');
-
-
       }
+      llamados.UpdateUsers(nombre,email,password)
      }
 
-     llamados.UpdateUsers(nombre,email,password,id)
 
 
   return (
     <div>
-
+      <h3>CRUD USUARIOS</h3>
       <ul>
         {usuarios.map((usuario,index) => (
           <li key={index}>
-            <strong>Nombre:</strong> {usuario.nombre} <br />
-            <input value={usuarioMostrarId} onChange={nombre} type="text" />
-
+            <br />
+            <strong>Paciente:</strong> {usuario.nombre} <br />
+            <input  onChange={(evento)=>SetNombre(evento.target.value)} type="text" />
+            <br />
             <strong>Email:</strong> {usuario.email} <br />
-            <input value={usuarioMostrarId} onChange={email} type="text" />
-
+            <input  onChange={(evento)=>SetEmail(evento.target.value)} type="text" />
+            
             <strong>Password:</strong> {usuario.password}
-            <input value={usuarioMostrarId} onChange={password} type="text" />
+            <input  onChange={(evento)=>SetPassword(evento.target.value)} type="text" />
             
             <button onClick={()=>eliminar(usuario.id)} >Eliminar</button>
             <button onClick={()=>editar(usuario.id)} >Editar</button>

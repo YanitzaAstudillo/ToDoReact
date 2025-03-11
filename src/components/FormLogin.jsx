@@ -65,23 +65,18 @@ function FormLogin() {
       
     }
     
-    
-   
-  
-
-    
   }
 
-
-  
   return (
     <div>
-
-      <label htmlFor="">Nombre</label>
-      <input value={nombreUsuario} onChange={nombre} type="text" />
-      <label htmlFor="">Contraseña</label>
-      <input value={passwordUsuario} onChange={password} type="text" />
+      <br />
+      <label htmlFor="">Nombre</label><br />
+      <input value={nombreUsuario} onChange={nombre} type="text" /><br />
+      <label htmlFor="">Contraseña</label><br />
+      <input value={passwordUsuario} onChange={password} type="text" /><br />
+      <br />
       <button onClick={validar}>Iniciar</button>
+      <br />
       <p>¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link></p>
     </div>
   )

@@ -14,7 +14,7 @@
       rgba(104, 17, 218, 0.814),
       rgba(226, 12, 212, 0.814)
     );
-  
+    list-style-type: none;
   }
     #boton2{
       color: white;

@@ -1,10 +1,22 @@
 {
   "users": [
     {
-      "nombre": "Juan",
-      "email": "juanito@gmail.com",
-      "password": "12345",
-      "id": "f3d6"
+      "id": "32d3",
+      "nombre": "juanpa",
+      "email": "juanpa34.com",
+      "password": "45667"
+    },
+    {
+      "id": "1546",
+      "nombre": "pepe",
+      "email": "ppepe.com",
+      "password": "890"
+    },
+    {
+      "id": "382e",
+      "nombre": "travis",
+      "email": "travis.com",
+      "password": "333444"
     }
   ]
 }
