@@ -1,22 +1,35 @@
 import React, { useEffect, useState } from 'react'
 
-function Evento() {
-  const [numero,setNumero]=useState(0);
-    const contar = 0
+import llamados from '../services/llamados';
+
+
+
+ function Evento() {
+
+    const [usuarios,setUsuarios]=useState([]);
+   
 
     useEffect(()=>{
-        setNumero(contar)
+      async function fetchData() {
         
+      
+      const dataUsuarios = await llamados.GetUsers()
+      const numero = dataUsuarios.length
+ 
+        setUsuarios(numero)
+        console.log(usuarios);
+
+      }
+        fetchData()
+
     },[])
+
+  
    
   return (
     <div>
-
-
-      <p>valor : {numero}</p>
-
-      <button onClick={Evento}>Solicitudes</button>
-      
+      <p>{usuarios}</p>
+      <button>Solicitudes de Registros</button>
       <br />
       <br />
       <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
