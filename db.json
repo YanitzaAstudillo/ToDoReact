@@ -1,10 +1,16 @@
 {
   "users": [
     {
-      "nombre": "44",
-      "email": "55",
-      "password": "66",
-      "id": "d7d0"
+      "id": "1eda",
+      "nombre": "osito",
+      "email": "osito.com",
+      "password": "77777"
+    },
+    {
+      "id": "52a3",
+      "nombre": "petra",
+      "email": "petra.com",
+      "password": "999999"
     }
   ]
 }

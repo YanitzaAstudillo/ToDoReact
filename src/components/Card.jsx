@@ -28,8 +28,18 @@ function Card() {
       console.log(id);
       
       llamados.DeleteUser(id)
-      
+      eli()
      }
+
+     const eli = () => {
+      Swal.fire({
+        title:'eliminar usuario',
+        text: 'desea eliminar?',
+        icon: 'question',
+        confirmButtonText: 'aceptar',
+        cancelButtonText: 'cancelar'
+      });
+    }
 
 //funcion editar con find para encontrar datos y guardar la edicion
 
@@ -37,12 +47,12 @@ function Card() {
       console.log(nombre,email, password,id)
 
       llamados.UpdateUsers(nombre,email,password,id)
-
+        edit()
       }
 
         const edit = () => {
           Swal.fire({
-            title:'editar usuario',
+            title:'edicion usuario',
             text: 'editar usuario?',
             icon: 'question',
             confirmButtonText: 'aceptar',
@@ -65,12 +75,12 @@ function Card() {
             <br />
             <strong>Email:</strong> {usuario.email} <br />
             <input  onChange={(evento)=>SetEmail(evento.target.value)} type="text" />
-            
-            <strong>Password:</strong> {usuario.password}
+            <br />
+            <strong>Password:</strong> {usuario.password} <br />
             <input  onChange={(evento)=>SetPassword(evento.target.value)} type="text" />
-            
-            <button onClick={()=>eliminar(usuario.id)} >Eliminar</button>
-            <button onClick={()=>editar(usuario.id)} >Editar</button>
+            <br />
+            <button onClick={()=>eliminar(usuario.id)} >Eliminar</button> <br />
+            <button onClick={()=>editar(usuario.id)} >Editar</button> <br />
             
             
           </li>
