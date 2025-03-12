@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import llamados from '../services/llamados';
 
 
-
+//Funcion para contador y Hook usuarios con su seteo y el useEfect para no ciclar//
  function Evento() {
 
     const [usuarios,setUsuarios]=useState([]);
@@ -11,7 +11,7 @@ import llamados from '../services/llamados';
 
     useEffect(()=>{
       async function fetchData() {
-        
+  //funcion asyncrona para agarrar el Get de usuarios para mostrar la cantidad de registros//      
       
       const dataUsuarios = await llamados.GetUsers()
       const numero = dataUsuarios.length
@@ -25,10 +25,11 @@ import llamados from '../services/llamados';
     },[])
 
   
+
    
   return (
     <div>
-      <p>{usuarios}</p>
+      <h3>{usuarios}</h3>
       <button>Solicitudes de Registros</button>
       <br />
       <br />

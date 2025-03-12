@@ -2,16 +2,18 @@ import React, { useState,useEffect } from 'react'
 
 import llamados from '../services/llamados';
 
-//Hooks y funcion asincrona para obtencion de datos creados
+import Swal from 'sweetalert2';
+
+//Hooks y funcion asincrona para obtencion de datos creados//
 function Card() {
 
   const [usuarios,SetUsuarios]=useState ([])
   const [nombre,SetNombre]=useState('')
   const [email,SetEmail]=useState('')
   const [password,SetPassword]=useState('')
-  const [usuarioMostrarId, SetusuarioId] = useState(null);
   
-
+  
+//funcion asyncrona para la obtencion de datos mediante el Get
   useEffect(() => {
        async function fetchDataUsers() {
          const datos = await llamados.GetUsers()
@@ -20,6 +22,8 @@ function Card() {
        };
        fetchDataUsers();
      }, []); 
+
+     //funcion eliminar jalando el id para su funcionalidad//
      function eliminar(id) {
       console.log(id);
       
@@ -30,27 +34,23 @@ function Card() {
 //funcion editar con find para encontrar datos y guardar la edicion
 
      function editar(id) {
-      const usuarioEditar = usuarios.find((usuario)=> usuario.id ===id);
-      if (usuarioEditar){
-        SetNombre(usuarioEditar.nombre);
-        SetEmail(usuarioEditar.email);
-        SetPassword (usuarioEditar.password);
-        SetusuarioId (id);
-      }
-      
-     }
-    
-     async function guardarEdicion (){
-      if (usuarioMostrarId){
-        await llamados.UpdateUsers (nombre, email, password, usuarioMostrarId);
-        usuarioMostrarId (null);
-        SetNombre ('');
-        SetEmail ('');
-        SetPassword ('');
-      }
-      llamados.UpdateUsers(nombre,email,password)
-     }
+      console.log(nombre,email, password,id)
 
+      llamados.UpdateUsers(nombre,email,password,id)
+
+      }
+
+        const edit = () => {
+          Swal.fire({
+            title:'editar usuario',
+            text: 'editar usuario?',
+            icon: 'question',
+            confirmButtonText: 'aceptar',
+            cancelButtonText: 'cancelar'
+          });
+  
+        }
+     
 
 
   return (
@@ -76,14 +76,6 @@ function Card() {
           </li>
         ))}
       </ul>
-      { usuarioMostrarId && (
-        <div>
-          <button onClick={guardarEdicion}>Guardar cambios</button>
-        </div>
-      )
-
-      }
-
 
 
     </div>

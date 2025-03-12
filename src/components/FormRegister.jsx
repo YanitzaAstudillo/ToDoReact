@@ -43,7 +43,7 @@ function FormRegister() {
 
   }
 
-//Hook para el sweetalert
+//lambda para el sweetalert
 
   const mostrarAlerta = () => {
     Swal.fire ({
@@ -70,7 +70,7 @@ function FormRegister() {
         <br />
         <p>¿Ya tienes una cuenta? <Link to="/login">Inicia Aqui</Link></p>
         <br />
-        <p>DIRECTORIO DE SOLICITUDES<Link to="/Home">Link data solicitudes</Link></p>
+        <h4>DIRECTORIO DE SOLICITUDES<Link to="/Home">Link data solicitudes</Link></h4>
 
     </div>
   )

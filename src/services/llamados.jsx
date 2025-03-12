@@ -41,9 +41,9 @@ async function PostUsers(nombre, email, password) {
     }
 }
 
-async function UpdateUsers(paciente, email,password, id) {
+async function UpdateUsers(nombre, email,password, id) {
     try {
-        const userData = {paciente, email,password, id };
+        const userData = {nombre, email,password, id };
 
         const response = await fetch(`http://localhost:3000/users/${id}`, {
             method: 'PUT',
