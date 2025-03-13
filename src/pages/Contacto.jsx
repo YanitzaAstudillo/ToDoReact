@@ -4,8 +4,8 @@ import '../styles/contacto.css'
 
 function Contacto() {
   return (
-    <div className='estilo4'>contacto</div>
-
+    <div className='estilo4'>Contacto</div>
+    
   )
 }
 

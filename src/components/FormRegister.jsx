@@ -43,7 +43,7 @@ function FormRegister() {
 
   }
 
-//lambda para el sweetalert
+//lambda para el sweetalert//
 
   const mostrarAlerta = () => {
     Swal.fire ({
